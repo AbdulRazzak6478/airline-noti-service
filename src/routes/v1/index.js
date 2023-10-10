@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const {infoController:{info}} = require('../../controllers')
+const {infoController:{info},emailController} = require('../../controllers')
+
+router.post('/tickets',emailController.create);
 
 router.get('/info',info) 
 router.get('/info/new',(req,res)=>{

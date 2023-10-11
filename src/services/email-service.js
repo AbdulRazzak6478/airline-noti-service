@@ -5,8 +5,6 @@ const AppError = require('../utils/errors/app-error');
 const ticketRepository = new TicketRepository();
 
 
-
-
 async function sendEmail(mailFrom, mailTo, mailSubject, mailText)
 {
     try {
@@ -14,7 +12,7 @@ async function sendEmail(mailFrom, mailTo, mailSubject, mailText)
             from : mailFrom,
             to : mailTo,
             subject : mailSubject,
-            text : mailText
+            text : `${mailText}`,
         });
          return response;
     } catch (error) {
